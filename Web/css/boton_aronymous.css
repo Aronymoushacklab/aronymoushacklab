@@ -1,0 +1,42 @@
+.boton-aronymous {
+  padding: 1rem 2rem;
+  color: #0f0;
+  background: transparent;
+  border: 2px solid #0f0;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  font-family: 'Courier New', monospace;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.boton-aronymous::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 255, 0, 0.253);
+  transition: all 0.5s ease;
+  z-index: -1;
+}
+
+.boton-aronymous:hover::before {
+  left: 0;
+}
+
+.boton-aronymous:hover {
+  box-shadow: 0 0 10px #0f0, 0 0 20px #0f0, 0 0 40px #0f0;
+  transform: scale(1.05);
+}
+
+@media screen and (max-width: 600px) {
+  .boton-aronymous {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+  }
+}

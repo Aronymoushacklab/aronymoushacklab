@@ -1,0 +1,31 @@
+div.scrollmenu {
+  background-color: #010101;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch; /* suaviza en móviles */
+  scrollbar-width: thin;
+  scrollbar-color: #00ff00 #010101; /* color verde estilo hacker */
+}
+
+div.scrollmenu a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+div.scrollmenu a:hover {
+  background-color: #00ff00; /* verde estilo hacker */
+  color: #010101;
+}
+
+/* Responsive: en pantallas pequeñas ajustar el padding y fuente */
+@media screen and (max-width: 600px) {
+  div.scrollmenu a {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+}
