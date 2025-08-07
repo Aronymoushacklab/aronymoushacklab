@@ -1,0 +1,109 @@
+
+/* General Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Body background */
+body {
+  background-color: #000;
+  font-family: Arial, sans-serif;
+  color: #00ff00;
+  overflow-x: hidden;
+
+  width: 70%;
+  margin: 0 auto;  /* Centra horizontalmente */
+}
+
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  font-size: 40px;
+  text-align: center;
+  background: rgb(23, 22, 22);
+}
+
+/* Columns */
+.leftcolumn {   
+  float: left;
+  width: 75%;
+}
+
+.rightcolumn {
+  float: left;
+  width: 25%;
+  padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+  background-color: #181818;
+  width: 100%;
+  padding: 20px;
+  color: #0f0;
+}
+
+/* Card styling */
+.card {
+  background-color: rgb(12, 12, 12);
+  padding: 20px;
+  margin-top: 20px;
+  border: 1px solid #0f0;
+}
+
+/* Clearfix for row */
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #111;
+  color: #0f0;
+  margin-top: 20px;
+}
+
+/* Responsive design */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* Green glowing blob background */
+.blob {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  background: #00ff0033;
+  border-radius: 50%;
+  filter: blur(60px);
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  animation: moveBlob 6s ease-in-out infinite;
+}
+
+@keyframes moveBlob {
+  0% {
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+    border-radius: 50% 40% 60% 50% / 50% 60% 40% 50%;
+  }
+  50% {
+    transform: translate(-48%, -52%) scale(1.1) rotate(180deg);
+    border-radius: 60% 50% 40% 60% / 50% 40% 60% 50%;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1) rotate(360deg);
+    border-radius: 50% 40% 60% 50% / 50% 60% 40% 50%;
+  }
+}

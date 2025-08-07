@@ -1,0 +1,45 @@
+ body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      color: #00ff00;
+      font-family: monospace;
+      font-size: 16px;
+    }
+
+    #terminal {
+      padding: 20px;
+      white-space: pre-wrap;
+    }
+
+    .prompt {
+      display: inline;
+    }
+
+    .input-line {
+      display: inline;
+    }
+
+    a.folder-link {
+      color: #00ff00;
+      text-decoration: none;
+      margin-right: 15px;
+    }
+
+    a.folder-link:hover {
+      text-decoration: underline;
+    }
+
+    .output-line {
+      margin: 5px 0;
+    }
+
+    .blink {
+      animation: blink 1s steps(2, start) infinite;
+    }
+
+    @keyframes blink {
+      to {
+        visibility: hidden;
+      }
+    }

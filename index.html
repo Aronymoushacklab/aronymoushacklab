@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+     <style>
+    body {
+      background-color: #000;
+      color: #00ff00;
+      font-family: 'Courier New', Courier, monospace;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .terminal {
+      text-align: center;
+    }
+
+    .loading-text {
+      font-size: 2rem;
+      letter-spacing: 2px;
+      white-space: pre;
+      animation: typing 3s steps(30, end), blink 0.5s step-end infinite alternate;
+      border-right: 2px solid #00ff00;
+      width: fit-content;
+      margin: 0 auto;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    .matrix {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background: transparent;
+      overflow: hidden;
+    }
+
+    canvas {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="terminal">
+    <div class="loading-text">Aronymous - +ºIniciando sesión en el sistema...</div>
+  </div>
+
+  <div class="matrix">
+    <canvas id="matrixCanvas"></canvas>
+  </div>
+
+  <script>
+    // Redirección después de 5 segundos
+    setTimeout(() => {
+      window.location.href = "/Web"; // Cambia esto por tu URL interna
+    }, 5000);
+
+    // Efecto estilo Matrix
+    const canvas = document.getElementById('matrixCanvas');
+    const ctx = canvas.getContext('2d');
+
+    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
+
+    const letters = '01';
+    const fontSize = 14;
+    const columns = canvas.width / fontSize;
+
+    const drops = Array(Math.floor(columns)).fill(1);
+
+    function drawMatrix() {
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = '#0f0';
+      ctx.font = fontSize + 'px monospace';
+
+      for (let i = 0; i < drops.length; i++) {
+        const text = letters.charAt(Math.floor(Math.random() * letters.length));
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+
+        drops[i]++;
+      }
+    }
+
+    setInterval(drawMatrix, 33);
+
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+  </script>
+    
+</body>
+</html>
