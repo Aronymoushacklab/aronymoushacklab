@@ -1,0 +1,62 @@
+
+.aronymous_boton_animado {
+      position: relative;
+      padding: 16px 32px;
+      font-size: 1.2rem;
+      color: #00ff00;
+      background: transparent;
+      border: 2px solid #00ff00;
+      font-family: 'Courier New', monospace;
+      text-transform: uppercase;
+      cursor: pointer;
+      overflow: hidden;
+      transition: 0.3s ease;
+      z-index: 1;
+    }
+
+    .aronymous_boton_animado::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: #00ff00;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+      z-index: -1;
+    }
+
+    .aronymous_boton_animado:hover::before {
+      transform: scaleX(1);
+    }
+
+    .aronymous_boton_animado:hover {
+      color: #000;
+    }
+
+    .aronymous_boton_animado span {
+      display: inline-block;
+      animation: aronymous_glitch 2s infinite;
+    }
+
+    @keyframes aronymous_glitch {
+      0% { transform: translate(0); opacity: 1; }
+      10% { transform: translate(-1px, 1px); opacity: 0.8; }
+      20% { transform: translate(1px, -2px); opacity: 1; }
+      30% { transform: translate(-2px, 0); opacity: 0.9; }
+      40% { transform: translate(1px, 1px); opacity: 1; }
+      50% { transform: translate(0, -1px); opacity: 0.8; }
+      60% { transform: translate(1px, 2px); opacity: 1; }
+      70% { transform: translate(-1px, -1px); opacity: 1; }
+      80% { transform: translate(2px, 0); opacity: 0.9; }
+      90% { transform: translate(-2px, 2px); opacity: 1; }
+      100% { transform: translate(0); opacity: 1; }
+    }
+
+    @media screen and (max-width: 600px) {
+      .aronymous_boton_animado {
+        padding: 12px 24px;
+        font-size: 1rem;
+      }
+    }

@@ -1,0 +1,19 @@
+    .foros {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .foro {
+      background: #191919;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .foro:hover {
+      transform: scale(1.05);
+      background: rgb(13, 13, 13);
+      color: #34e204;
+    }

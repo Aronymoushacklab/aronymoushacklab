@@ -1,0 +1,178 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    color: #00ff00;
+    font-family: 'Courier New', monospace;
+    min-height: 100vh;
+}
+
+/* NAVBAR */
+nav {
+    background: rgba(0, 255, 0, 0.1);
+    border-bottom: 1px solid #00ff00;
+    padding: 1rem;
+}
+
+nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+nav a {
+    color: #00ff00;
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+nav a:hover {
+    opacity: 1;
+}
+
+/* LAYOUT PRINCIPAL */
+.terminal-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 1rem;
+    padding: 1rem;
+    height: calc(100vh - 4rem);
+}
+
+/* PANELES */
+.signal-monitor {
+    border: 1px solid #00ff00;
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+.signal-strength {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #00ff00;
+    animation: pulse 2s infinite;
+}
+
+/* EFECTOS */
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.terminal-window {
+    border: 1px solid #00ff00;
+    padding: 1.5rem;
+    overflow-y: auto;
+    font-size: 11px;
+}
+
+.command-line {
+    margin-bottom: 1rem;
+}
+
+.command-line::before {
+    content: ">";
+    margin-right: 0.5rem;
+    color: #00ff00;
+}
+
+.scanning {
+    animation: scan 1.5s infinite;
+}
+
+@keyframes scan {
+    0% { color: #00ff00; }
+    50% { color: #008800; }
+    100% { color: #00ff00; }
+}
+
+pre {
+    margin: 1rem 0;
+    font-family: 'Courier New', monospace;
+}
+
+/* --- RESPONSIVE --- */
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .terminal-layout {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+    .signal-monitor {
+        order: 2;
+    }
+    .terminal-window {
+        order: 1;
+    }
+}
+
+/* Móviles */
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .terminal-window {
+        font-size: 13px;
+        padding: 1rem;
+    }
+
+    .signal-monitor {
+        font-size: 13px;
+        padding: 1rem;
+    }
+}
+
+
+
+.donate-button {
+    display: inline-block;
+    background: #000;
+    color: #00ff00;
+    border: 2px solid #00ff00;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-family: "Courier New", monospace;
+    text-decoration: none;
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    animation: pulse 2s infinite;
+}
+
+/* Efecto hover */
+.donate-button:hover {
+    background: #00ff00;
+    color: #000;
+    box-shadow: 0 0 20px #00ff00;
+}
+
+/* Animación de pulso */
+@keyframes pulse {
+    0% { box-shadow: 0 0 5px #00ff00; }
+    50% { box-shadow: 0 0 20px #00ff00; }
+    100% { box-shadow: 0 0 5px #00ff00; }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .donate-button {
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
+        letter-spacing: 1px;
+    }
+}

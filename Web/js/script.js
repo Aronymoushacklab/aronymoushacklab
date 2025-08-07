@@ -1,28 +1,53 @@
-const sidebar = document.getElementById('sidebar');
-const overlay = document.getElementById('overlay');
+(() => {
+  // Seguridad: Esperar DOM cargado
+  document.addEventListener('DOMContentLoaded', () => {
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+    const menuToggle = document.getElementById('menu-toggle');
+    const closeSidebar = document.getElementById('close-sidebar');
 
-// Abrir sidebar
-document.getElementById('menu-toggle').addEventListener('click', () => {
-  sidebar.classList.add('show');
-  overlay.classList.add('show');
-});
+    if (!sidebar || !overlay || !menuToggle || !closeSidebar) {
+      console.warn('Sidebar elements not found.');
+      return;
+    }
 
-// Cerrar sidebar con botón ✖
-document.getElementById('close-sidebar').addEventListener('click', () => {
-  sidebar.classList.remove('show');
-  overlay.classList.remove('show');
-});
+    const openSidebar = () => {
+      sidebar.classList.add('show');
+      overlay.classList.add('show');
+      document.body.classList.add('no-scroll');
+    };
 
-// Cerrar sidebar tocando fuera (overlay)
-overlay.addEventListener('click', () => {
-  sidebar.classList.remove('show');
-  overlay.classList.remove('show');
-});
+    const closeSidebarFn = () => {
+      sidebar.classList.remove('show');
+      overlay.classList.remove('show');
+      document.body.classList.remove('no-scroll');
+    };
 
-// Subcategorías desplegables
-document.querySelectorAll('.has-submenu > strong').forEach(item => {
-  item.addEventListener('click', () => {
-    const parent = item.parentElement;
-    parent.classList.toggle('open');
+    // Botón abrir sidebar
+    menuToggle.addEventListener('click', openSidebar);
+
+    // Botón cerrar ✖
+    closeSidebar.addEventListener('click', closeSidebarFn);
+
+    // Click en overlay
+    overlay.addEventListener('click', closeSidebarFn);
+
+    // Submenús desplegables (delegación de eventos segura)
+    sidebar.addEventListener('click', (e) => {
+      const trigger = e.target.closest('.has-submenu > strong');
+      if (trigger) {
+        const parent = trigger.parentElement;
+        if (parent) {
+          parent.classList.toggle('open');
+        }
+      }
+    });
+
+    // Extra: Cerrar con tecla ESC
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeSidebarFn();
+      }
+    });
   });
-});
+})();

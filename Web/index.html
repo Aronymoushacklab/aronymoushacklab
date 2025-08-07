@@ -5,10 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/boton_aronymous.css">
+    <link rel="stylesheet" href="css/boton_animado.css">
+    <link rel="stylesheet" href="css/botones.css">
     <link rel="stylesheet" href="css/banner.css">
     <link rel="stylesheet" href="css/blog.css">
     <link rel="stylesheet" href="css/line_nav.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/card.css">
+    <link rel="stylesheet" href="css/boton_redes.css">
+    <link rel="stylesheet" href="css/foros.css">
+    <link rel="stylesheet" href="css/footer.css">
+
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+    <title>Aronymous Hack Lab</title>
 </head>
 <body>
     
@@ -17,107 +27,157 @@
   <header>
     <button id="menu-toggle">☰</button>
     <h1>Aronymous_H@ck_Lab &rarr; <em style="color:greenyellow">Gr@Y H@t</em></h1>
-    <div class="scrollmenu">
-  <a href="#home">Carding</a>
-  <a href="#news">Correos Temporales</a>
-  <a href="#contact">Pishing Avanzado</a>
-  <a href="#about">About</a>
-  <a href="#support">Support</a>
-  <a href="#blog">Blog</a>
-  <a href="#tools">Tools</a>  
-  <a href="#base">Base</a>
-  <a href="#custom">Custom</a>
-  <a href="#more">More</a>
-  <a href="#logo">Logo</a>
-  <a href="#friends">Friends</a>
-  <a href="#partners">Partners</a>
-  <a href="#people">People</a>
-  <a href="#work">Work</a>
+    <div class="scrollmenu" style="margin-left: 10px;border-radius: 7px;">
+  <a href="Subs/carding.html">Carding</a>
+  <a href="Subs/correos.html">Correos Temporales</a>
+  <a href="Subs/pishng.html">Pishing Avanzado</a>
+  <a href="Subs/anonimato.html">Anonimato</a>
+  <a href="Subs/deepweb.html">Darkweb</a>
+  <a href="Subs/forense.html">Analisis Forense</a>
+
 </div>
   </header>
 
   <aside id="sidebar">
     <button id="close-sidebar">✖</button>
     <nav>
-      <ul>
-        <li class="has-submenu"><strong>&#x21B3; Recopilacion de informacion  </strong>
-          <ul class="submenu">
-            <li> &#x25BC;</li>
-            <li>Buffer Overflow</li>
-            <li>ROP Chains</li>
-          </ul>
-        </li>
-        <li class="has-submenu"><strong>&#x21B3; Analisis de Vulnerabilidades </strong>
-          <ul class="submenu">
-            <li> &#x25BC;</li>
-            <li>Herramientas</li>
-            <li>Casos Reales</li>
-          </ul>
-        </li>
-         <li class="has-submenu"><strong>&#x21B3; Aplicaciones Web &#x25BC;</strong>
-          <ul class="submenu">
-            <li>Herramientas</li>
-            <li>Casos Reales</li>
-          </ul>
-        </li>
-         <li class="has-submenu"><strong>&#x21B3; Herramientas de Explotacion &#x25BC;</strong>
-          <ul class="submenu">
-            <li>Herramientas</li>
-            <li>Casos Reales</li>
-          </ul>
-        </li>
-         <li class="has-submenu"><strong>&#x21B3; Mantenimiento de Acceso &#x25BC;</strong>
-          <ul class="submenu">
-            <li>Herramientas</li>
-            <li>Casos Reales</li>
-          </ul>
-        </li>
-         <li class="has-submenu"><strong>&#x21B3; Post Explotacion &#x25BC;</strong>
-          <ul class="submenu">
-            <li>Herramientas</li>
-            <li>Casos Reales</li>
-          </ul>
-        </li>
-         <li class="has-submenu"><strong>&#x21B3; Ataque a Contraseñas &#x25BC;</strong>
-          <ul class="submenu">
-            <li>Herramientas</li>
-            <li>Casos Reales</li>
-          </ul>
-        </li>
-         <li class="has-submenu"><strong>&#x21B3; OSINT &#x25BC;</strong>
-          <ul class="submenu">
-            <li>Herramientas</li>
-            <li>Casos Reales</li>
-          </ul>
-        </li>        <li class="has-submenu"><strong>Malware Analysis</strong>
-          <ul class="submenu">
-            <li>Linux</li>
-            <li>Windows</li>
-          </ul>
-        </li>
-      </ul>
+<ul>
+  <li class="has-submenu"><strong>&#x21B3; Recopilación de Información</strong>
+    <ul class="submenu">
+      <li>&#x25BC;</li>
+      <li><a href="../Subs_lateral/Dnsenum/">Dnsenum</a></li>
+      <li><a href="../Subs_lateral/Dnsmap/">Dnsmap</a></li>
+      <li><a href="../Subs_lateral/Recon-ng/">Recon-ng</a></li>
+    </ul>
+  </li>
+
+  <li class="has-submenu"><strong>&#x21B3; Análisis de Vulnerabilidades</strong>
+    <ul class="submenu">
+      <li>&#x25BC;</li>
+      <li><a href="../Subs_lateral/Nmap/">NMAP</a></li>
+    </ul>
+  </li>
+
+  <li class="has-submenu"><strong>&#x21B3; Aplicaciones Web</strong>
+    <ul class="submenu">
+      <li>&#x25BC;</li>
+      <li><a href="../Subs_lateral/Burpsuite/">Burpsuite</a></li>
+      <li><a href="../Subs_lateral/ZAProxy/">Zapproxy</a></li>
+      <li><a href="../Subs_lateral/Nikto/">Nikto</a></li>
+      <li><a href="../Subs_lateral/SQLinjection/">SQLinjection</a></li>
+      <li><a href="../Subs_lateral/Dirbuster/">Dirbuster</a></li>
+    </ul>
+  </li>
+
+  <li class="has-submenu"><strong>&#x21B3; Herramientas de Explotación</strong>
+    <ul class="submenu">
+      <li>&#x25BC;</li>
+      <li><a href="../Subs_lateral/Metasploit/">Metasploit</a></li>
+      <li><a href="../Subs_lateral/Exploits-manuales/">Exploits manuales</a></li>
+    </ul>
+  </li>
+
+  <li class="has-submenu"><strong>&#x21B3; Mantenimiento de Acceso</strong>
+    <ul class="submenu">
+      <li>&#x25BC;</li>
+      <li><a href="../Subs_lateral/Backdoors/">Backdoors</a></li>
+    </ul>
+  </li>
+
+  <li class="has-submenu"><strong>&#x21B3; Post Explotación</strong>
+    <ul class="submenu">
+      <li>&#x25BC;</li>
+      <li><a href="../Subs_lateral/Dumpzilla/">Dumpzilla</a></li>
+    </ul>
+  </li>
+
+  <li class="has-submenu"><strong>&#x21B3; Ataque a Contraseñas</strong>
+    <ul class="submenu">
+      <li>&#x25BC;</li>
+      <li><a href="../Subs_lateral/Hashcat/">Hashcat</a></li>
+      <li><a href="../Subs_lateral/Hydra/">Hydra</a></li>
+      <li><a href="../Subs_lateral/Medusa/">Medusa</a></li>
+      <li><a href="../Subs_lateral/Diccionarios/">Diccionarios</a></li>
+    </ul>
+  </li>
+
+  <li class="has-submenu"><strong>&#x21B3; Ataques a Wireless</strong>
+    <ul class="submenu">
+      <li>&#x25BC;</li>
+      <li><a href="../Subs_lateral/Aircrack/">Aircrack</a></li>
+      <li><a href="../Subs_lateral/Airgedom/">Airgedom</a></li>
+    </ul>
+  </li>
+
+  <li class="has-submenu"><strong>&#x21B3; Husmeando / Poison</strong>
+    <ul class="submenu">
+      <li>&#x25BC;</li>
+      <li><a href="../Subs_lateral/Ettercap/">Ettercap</a></li>
+      <li><a href="../Subs_lateral/Wireshark/">Wireshark</a></li>
+      <li><a href="../Subs_lateral/Bettercap/">Bettercap</a></li>
+    </ul>
+  </li>
+
+  <li class="has-submenu"><strong>&#x21B3; Análisis Forense</strong>
+    <ul class="submenu">
+      <li>&#x25BC;</li>
+      <li><a href="../Subs_lateral/Autopsy/">Autopsy</a></li>
+    </ul>
+  </li>
+
+  <li class="has-submenu"><strong>&#x21B3; Ingeniería Inversa</strong>
+    <ul class="submenu">
+      <li><a href="../Subs_lateral/Apktool/">Apktool</a></li>
+    </ul>
+  </li>
+</ul>
+
     </nav>
   </aside>
+
+
+
+
+
+
 
  <div class="banner">
     <img src="../imgs/hacker007.jpg" alt="Imagen del banner">
   
   </div>
 <div class="header">
-  <button class="boton-aronymous">Iniciar</button>
+  <button class="boton-aronymous">Donar al Proyecto Paypal</button>
+  <button class="boton-aronymous">Donar al Proyecto Criptomonedas</button>
+  <button class="boton-aronymous">Donar al Proyecto Deposito Bancario</button>
+
+  <br><br>
+
+      <div class="redes_container">
+    <a href="https://facebook.com" target="_blank" class="boton_red"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://instagram.com" target="_blank" class="boton_red"><i class="fab fa-instagram"></i></a>
+    <a href="https://x.com" target="_blank" class="boton_red"><i class="fab fa-x-twitter"></i></a>
+    <a href="https://youtube.com" target="_blank" class="boton_red"><i class="fab fa-youtube"></i></a>
+    <a href="https://github.com" target="_blank" class="boton_red"><i class="fab fa-github"></i></a>
+    <a href="https://linkedin.com" target="_blank" class="boton_red"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://t.me" target="_blank" class="boton_red"><i class="fab fa-telegram-plane"></i></a>
+    <a href="https://tiktok.com" target="_blank" class="boton_red"><i class="fab fa-tiktok"></i></a>
+  </div>
 
 </div>
 
 <div class="row">
   <div class="leftcolumn">
     <div class="card">
-      <h2>Tecnicas con varias herramientas</h2>
-      <h5>Title description, Dec 7, 2017</h5><br>
+      <h2>Tecnicas con varias herramientas de repositorios </h2>
+      <h5>Mezclando herramientas para ciber ataques</h5><br>
       <div class="fakeimg" style="height:100%;width: 100%;" >
         <img src="../imgs/hacvker.jpg" alt="" width="100%" height="300vh">
       </div>
-      <p>Some text..</p>
-      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+           <br>
+  <button class="aronymous_boton_animado">
+    <span>Ver tutorial</span>
+  </button>
+        <br> 
     </div>
     <div class="card">
       <h2>Analisis de Cibercrimen </h2>
@@ -125,8 +185,19 @@
      <div class="fakeimg" style="height:100%;width: 100%;" >
         <img src="../imgs/hackingbanner.jpg" alt="" width="100%" height="300vh">
       </div>
-      <p>Some text..</p>
-      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+      <br>
+      <p>     Análisis de Cibercrimen – Enfoque Ético y Educativo</p> <br><br>
+     
+      <p style="font-size: 14px;">
+
+El análisis del cibercrimen consiste en estudiar técnicas, vectores de ataque y patrones utilizados por ciberdelincuentes para vulnerar sistemas, comprometer información y evadir la detección. Desde una perspectiva ética, este análisis permite fortalecer infraestructuras digitales, anticipar amenazas emergentes y diseñar respuestas defensivas más eficaces. Es fundamental comprender cómo operan actores maliciosos en entornos como la dark web, el phishing avanzado o la explotación de vulnerabilidades 0-day. Herramientas forenses, inteligencia de amenazas (Threat Intelligence) y monitoreo de logs son esenciales para esta labor. La educación en ciberseguridad debe promover la investigación responsable, respetando el marco legal vigente y evitando toda práctica intrusiva no autorizada. Solo a través
+ del conocimiento crítico y ético se puede contrarrestar eficazmente el creciente impacto del cibercrimen.
+      </p>
+            <br>
+  <button class="aronymous_boton_animado">
+    <span>Ver tutorial</span>
+  </button>
+        <br> 
     </div>
   </div>
   <div class="rightcolumn">
@@ -136,21 +207,30 @@
       <div class="fakeimg" style="height:100%;">  <img src="../imgs/hack2.jpg" alt="" width="100%" height="300vh"></div>
       <br>
       <button class="boton-aronymous" style="width: 100%;">Ver Tutorial &rarr;</button>
-      <br><br>
-      <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+      <br>
+   
     </div>
     <div class="card">
-      <h3>Popular Post</h3><br>
-      <div class="fakeimg">  hack</div><br>
-      <div class="fakeimg">Image</div><br>
-      <div class="fakeimg">Image</div>
+      <h3>Algo mas!!</h3><br>
+      <div class="fakeimg">  Espionaje</div><br>
+      <div class="fakeimg">Rastreo de personas</div><br>
+      <div class="fakeimg">Ramsonware</div>
     </div>
     <div class="card">
-      <h3>Follow Me</h3>
-      <p>Some text..</p>
+      <h3>Sigue mis redes.</h3><br>
+      <p style="font-size: 10px;">Para hacer crecer el proyecto y pasar actulizando y agregando contenido</p>
+      <br>
+                  <img src="../imgs/logo 1.png" alt="Imagen del banner" width="100%">
+
     </div>
   </div>
 </div>
+
+
+
+
+
+
 
 <br><br>
   <main>
@@ -158,35 +238,142 @@
       <article>
         <h2>Que es un ZERO DAY y algo mas...</h2><br>
             <img src="../imgs/1.png" alt="Imagen del banner" width="100%">
+               <br><br>
 
-        <p>Introducción al pentesting en redes internas.</p>
+        <p>Ver docuemntos</p>
+    
+  <a href="#" class="boton verde"><i class="fas fa-terminal"></i></a>
+  <a href="#" class="boton naranja"><i class="fas fa-user-secret"></i></a>
       </article>
       <article>
         <h2>Como entrar en la deep web </h2><br>
             <img src="../imgs/elite.gif" alt="Imagen del banner" width="100%">
+                 <br><br>
 
-        <p>Uso ético de Metasploit en entornos controlados.</p>
+        <p>Ver tutorial</p>
+            	<a href="#" class="boton azul"><i class="fas fa-terminal"></i> </a>
+  <a href="#" class="boton rojo"><i class="fas fa-user-secret"></i></a>
       </article>
       <article>
         <h2>Comunidad Privada </h2><br>
                     <img src="../imgs/hack.jpg" alt="Imagen del banner" width="100%">
-
-        <p>OSINT avanzado usando fuentes públicas.</p>
+        <br><br>
+        <p>Sitios .onion.</p>
+          <a href="#" class="boton verde"><i class="fas fa-terminal"></i> </a>
+  <a href="#" class="boton naranja"><i class="fas fa-user-secret"></i></a>
       </article>
       <article>
         <h2>White Hat Vs Black Hat</h2><br>
                     <img src="../imgs/hackgif.gif" alt="Imagen del banner" width="100%">
+                <br><br>
 
-        <p>Ejemplo de análisis de malware en Linux.</p>
+        <p>Ver historia</p>
+          <a href="#" class="boton rojo"><i class="fas fa-terminal"></i> </a>
+  <a href="#" class="boton naranja"><i class="fas fa-user-secret"></i></a>
       </article>
     </div>
   </main>
 
 
 
-<div class="footer">
-  <h2>Footer</h2>
-</div>
+
+
+  <br><br>
+  <div style="width: 100%;background-color: black;">
+    <br><br>
+    <h1 style="color: red;text-align: center;">Worn GPT - Evil Hacker</h1>
+    <br>
+    <img src="../imgs/wormgpt.jpg.jpg" alt="worn" style="width: 100%; height: 70vh;">
+  <center> <br>
+        <button class="aronymous_boton_animado">
+    <span>Ver tutorial</span>
+  </button>
+  <br><br>
+  </center>
+  </div>
+
+<br><br>
+
+<h1 style="margin-left: 1vh;">Foros - Webs - Talleres de Hacking :</h1> <br>
+  <div class="foros">
+    <div class="foro"><img src="../imgs/hackforum.png" alt="" width="100%">Hack Forums</div>
+    <div class="foro"><img src="../imgs/undercode.png" alt="" width="100%"> Undercode</div>
+    <div class="foro"><img src="../imgs/anonymous.jpg" alt="" width="100%"> Exploit.in</div>
+    <div class="foro"><img src="../imgs/redteam.png" alt="" width="100%">Red Team Village</div>
+    <div class="foro"><img src="../imgs/nullbyte.png" alt="" width="100%"> Null Byte</div>
+    <div class="foro"><img src="../imgs/cyber.png" alt="" width="100%">CyberSecurity Forum (CSRF)</div>
+    <div class="foro"><img src="../imgs/hackthebox.png" alt="" width="100%">Hack the Box</div>
+    <div class="foro"><img src="../imgs/tryhackme.png" alt="" width="100%">tryhackme</div>
+ 
+  </div>
+
+
+
+<br><br><br><br>
+ <div class="aronymous_hack_lab_carta">
+    <img src="../imgs/aaron.jpg" alt="Hacker Mask">
+    <div class="aronymous_hack_lab_texto">
+ Hola, soy el creador del proyecto Aronymous Hack Lab, una iniciativa independiente diseñada para fusionar el conocimiento técnico con la conciencia digital.
+
+Esta plataforma nace como respuesta al creciente entorno de amenazas informáticas, y está pensada como una herramienta educativa, ética y orientada a la defensa tecnológica. El objetivo principal es empoderar a usuarios y profesionales mediante recursos prácticos en ciberseguridad, análisis de vulnerabilidades, y protección de dispositivos.
+
+Aronymous Hack Lab no es solo una app, es un entorno de laboratorio móvil, enfocado en el aprendizaje autónomo, la cultura libre y la innovación responsable. He desarrollado cada componente con la visión de ofrecer soluciones funcionales que ayuden a detectar riesgos, aprender técnicas defensivas y comprender el ecosistema del cibercrimen desde una perspectiva formativa.
+
+La seguridad digital no es un privilegio, es un derecho. Y esta herramienta fue construida para ser accesible, escalable y con propósito.
+
+Bienvenido al lab. Esto es solo el comienzo.
+
+
+      ATT: AARON PADILLA <br><br>
+
+      <div class="redes_container">
+    <a href="https://facebook.com" target="_blank" class="boton_red"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://instagram.com" target="_blank" class="boton_red"><i class="fab fa-instagram"></i></a>
+    <a href="https://x.com" target="_blank" class="boton_red"><i class="fab fa-x-twitter"></i></a>
+    <a href="https://youtube.com" target="_blank" class="boton_red"><i class="fab fa-youtube"></i></a>
+    <a href="https://github.com" target="_blank" class="boton_red"><i class="fab fa-github"></i></a>
+    <a href="https://linkedin.com" target="_blank" class="boton_red"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://t.me" target="_blank" class="boton_red"><i class="fab fa-telegram-plane"></i></a>
+    <a href="https://tiktok.com" target="_blank" class="boton_red"><i class="fab fa-tiktok"></i></a>
+  </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+<footer class="footer" style="margin-top: -1.9vh;">
+  <div class="footer-container">
+    <div class="footer-col">
+      <h3>Aronymous Hack Lab</h3>
+      <p>Conocimiento libre en seguridad informática, redes y programación ética.</p>
+    </div>
+    <div class="footer-col">
+      <h3>Recursos</h3>
+      <ul>
+        <li><a href="#">Tutoriales</a></li>
+        <li><a href="#">Reels educativos</a></li>
+        <li><a href="#">Herramientas éticas</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>Contacto</h3>
+      <ul>
+        <li><a href="mailto:contacto@aronymouslab.com">Email</a></li>
+        <li><a href="#">Telegram</a></li>
+        <li><a href="#">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+
+</footer>
+
     
     <script src="js/script.js"></script>
 </body>

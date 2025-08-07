@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lost.signal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+         /* Scrollbar personalizado para toda la página */
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #000;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #0f0;
+    border-radius: 10px;
+    border: 3px solid #000;
+    transition: background-color 0.3s ease;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #0c0;
+  }
+
+
+        body {
+            background-color: #000;
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+            min-height: 100vh;
+        }
+
+        nav {
+            background: rgba(0, 255, 0, 0.1);
+            border-bottom: 1px solid #00ff00;
+            padding: 1rem;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        nav a {
+            color: #00ff00;
+            text-decoration: none;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 1;
+        }
+
+        .terminal-layout {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 1rem;
+            padding: 1rem;
+            height: calc(100vh - 4rem);
+        }
+
+        .signal-monitor {
+            border: 1px solid #00ff00;
+            padding: 1rem;
+            overflow-y: auto;
+        }
+
+        .signal-strength {
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            border: 1px solid #00ff00;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        .terminal-window {
+            border: 1px solid #00ff00;
+            padding: 1.5rem;
+            overflow-y: auto;
+        }
+
+        .command-line {
+            margin-bottom: 1rem;
+        }
+
+        .command-line::before {
+            content: ">";
+            margin-right: 0.5rem;
+            color: #00ff00;
+        }
+
+        .scanning {
+            animation: scan 1.5s infinite;
+        }
+
+        @keyframes scan {
+            0% { color: #00ff00; }
+            50% { color: #008800; }
+            100% { color: #00ff00; }
+        }
+
+        pre {
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#terminal">Buscadores</a></li>
+            <li><a href="#signals">VPN</a></li>
+            <li><a href="#trace">PROXYS</a></li>
+            <li><a href="#debug">Modo Seguro</a></li>
+        </ul>
+    </nav>
+
+    <div class="terminal-layout">
+        <aside class="signal-monitor">
+            <div class="signal-strength">
+                <h3>Proyecto Tor</h3>
+                <img src="../../imgs/tor.png" alt="Tor" width="100%">
+                <p>Cargando: 100%</p>
+                <p>Tu : IP</p>
+                <p class="scanning">scanning...</p>
+                  <div id="ip">Cargando...</div>
+            </div>
+
+            <pre>
+Buscadores .Onion <br>
+> Ahmia 
+> Grams
+
+
+            </pre>
+        </aside>
+
+        <main class="terminal-window">
+            <div class="command-line">Entrando a la deep web configuraciones.</div>
+            <div class="command-line">Deep Web no es lo mismo que Dark Web</div>
+            <div class="command-line">decoding emotional fragments...</div>
+            <pre>
+🧱 1. Usa un sistema operativo anónimo (recomendado: Tails o Whonix)
+
+    Tails OS: corre desde USB, no deja rastros en el sistema.
+
+    Whonix: usa máquinas virtuales y enruta TODO por TOR (más técnico y robusto).
+
+    ⚠️ No uses Windows si te tomas en serio tu anonimato.
+
+🌐 2. Usa el navegador Tor, pero configúralo correctamente
+
+    No maximices la ventana.
+
+    No instales plugins ni extensiones.
+
+    Desactiva JavaScript desde "about:config" (o usa modo de seguridad alta).
+
+    Borra constantemente cookies y datos locales.
+
+🛰️ 3. Conéctate con puentes (Bridges) o nodos ocultos
+
+    Usa Bridges obfs4 para evitar que detecten que estás usando Tor.
+
+    Solicítalos en https://bridges.torproject.org/.
+
+📡 4. No uses tu IP real nunca
+
+    Conéctate primero a una VPN confiable sin registros (idealmente paga y en país sin tratados de datos).
+
+    Luego abre Tor. Esto se llama VPN → TOR (más seguro que TOR → VPN).
+
+💻 5. Usa una red limpia
+
+    Evita Wi-Fi personal o de casa. Usa redes públicas o de terceros (cafés, bibliotecas).
+
+    No te conectes a tus cuentas personales (Gmail, Facebook, etc.).
+
+🧬 6. Cambia tu comportamiento digital
+
+    No uses lenguaje, hábitos o nombres que te identifiquen.
+
+    No subas archivos o fotos sin limpiar metadatos (usa mat2 o exiftool para limpiarlos).
+
+    Usa alias distintos para cada identidad.
+
+🔐 7. Usa herramientas complementarias
+
+    PGP/GPG para cifrar mensajes.
+
+    CryptPad o ProtonMail para trabajo cifrado.
+
+    OnionShare para compartir archivos anónimamente.
+
+⚠️ Reglas de oro para el anonimato extremo:
+
+    Una vez que filtras tu IP real o identidad, ya no eres anónimo.
+
+    Confía solo en software open source.
+
+    La OPSEC (seguridad operativa) es más importante que la tecnología.
+
+    No mezcles identidades. Una identidad, un entorno, un propósito.
+            </pre>
+
+            <div class="command-line scanning">
+               Ahora _Navega
+            </div>
+        </main>
+    </div>
+
+     <script>
+async function fetchWithTimeout(resource, options = {}) {
+  const { timeout = 5000 } = options; // 5 segundos timeout por defecto
+
+  const controller = new AbortController();
+  const id = setTimeout(() => controller.abort(), timeout);
+
+  try {
+    const response = await fetch(resource, {
+      ...options,
+      signal: controller.signal  
+    });
+    clearTimeout(id);
+    return response;
+  } catch (error) {
+    clearTimeout(id);
+    throw error;
+  }
+}
+
+function validarIP(ip) {
+  // regex simple para IPv4
+  const ipv4Regex = /^(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}$/;
+  return ipv4Regex.test(ip);
+}
+
+async function obtenerIPAvanzada() {
+  const ipElement = document.getElementById('ip');
+  ipElement.textContent = 'Obteniendo IP...';
+
+  try {
+    const response = await fetchWithTimeout('https://api.ipify.org?format=json', { timeout: 7000 });
+    if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
+
+    const data = await response.json();
+
+    if (data.ip && validarIP(data.ip)) {
+      ipElement.textContent = data.ip;
+    } else {
+      throw new Error('Respuesta no contiene una IP válida');
+    }
+  } catch (error) {
+    if (error.name === 'AbortError') {
+      ipElement.textContent = 'La solicitud tardó demasiado y fue cancelada.';
+    } else {
+      ipElement.textContent = 'No se pudo obtener la IP.';
+    }
+    console.error('Error al obtener IP:', error);
+  }
+}
+
+obtenerIPAvanzada();
+
+  </script>
+</body>
+</html>

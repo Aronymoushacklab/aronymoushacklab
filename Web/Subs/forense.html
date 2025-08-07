@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aronymous Hack Lab | Reporte Forense Digital</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background: #000;
+            color: #d4d4d4;
+            line-height: 1.8;
+        }
+
+        header {
+            background: #0d0d0d;
+            padding: 25px;
+            border-bottom: 3px solid #0f0;
+            text-align: center;
+            box-shadow: 0 0 20px #0f0;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            color: #0f0;
+            text-shadow: 0 0 15px #0f0;
+        }
+
+        header p {
+            font-style: italic;
+            font-size: 1.2rem;
+            color: #9f9;
+        }
+
+        /* Banner tipo hacker news */
+        .banner {
+            background: #111;
+            color: #0f0;
+            overflow: hidden;
+            white-space: nowrap;
+            box-shadow: inset 0 0 15px #0f0;
+            border-top: 1px solid #0f0;
+            border-bottom: 1px solid #0f0;
+        }
+
+        .banner p {
+            display: inline-block;
+            padding: 12px 20px;
+            animation: scrollText 18s linear infinite;
+        }
+
+        @keyframes scrollText {
+            from { transform: translateX(100%); }
+            to { transform: translateX(-100%); }
+        }
+
+        nav {
+            background: #000;
+            color: #0f0;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            padding: 15px;
+            border-bottom: 2px solid #0f0;
+        }
+
+        nav a {
+            color: #0f0;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #fff;
+            text-shadow: 0 0 10px #0f0;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        article {
+            background: #0d0d0d;
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid #0f0;
+            box-shadow: 0 0 25px #0f0;
+        }
+
+        article h2 {
+            font-size: 1.8rem;
+            color: #0f0;
+            border-bottom: 2px solid #0f0;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        article h3 {
+            font-size: 1.4rem;
+            color: #9f9;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        article p { margin-bottom: 15px; color: #ccc; }
+
+        article blockquote {
+            font-style: italic;
+            background: rgba(0, 255, 0, 0.05);
+            border-left: 5px solid #0f0;
+            margin: 20px 0;
+            padding: 10px 15px;
+            color: #9f9;
+        }
+
+        article ul { margin: 15px 0 20px 20px; }
+        article ul li { margin-bottom: 12px; color: #bfbfbf; }
+
+        aside {
+            background: #0d0d0d;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #0f0;
+            box-shadow: 0 0 20px #0f0;
+        }
+
+        aside h3 {
+            margin-bottom: 15px;
+            border-bottom: 2px solid #0f0;
+            padding-bottom: 8px;
+            font-size: 1.4rem;
+            color: #0f0;
+        }
+
+        aside ul { list-style: none; }
+        aside ul li { margin-bottom: 12px; }
+        aside ul li a { color: #9f9; text-decoration: none; }
+        aside ul li a:hover { text-decoration: underline; color: #0f0; }
+
+        footer {
+            background: #111;
+            color: #0f0;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            border-top: 2px solid #0f0;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            main { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Aronymous Hack Lab</h1>
+        <p>Investigación, Ciberseguridad y Forense Digital</p>
+    </header>
+
+    <div class="banner">
+        <p>🔍 Última Hora: Nuevas técnicas forenses revelan rastros invisibles en la nube • 
+        ⚡ Expertos descifran datos ocultos en memorias RAM • 
+        🕵️ Caso emblemático: forense digital resuelve ataque global</p>
+    </div>
+
+    <nav>
+        <a href="#">Inicio</a>
+        <a href="#">Forense Digital</a>
+        <a href="#">Herramientas</a>
+        <a href="#">Casos Reales</a>
+        <a href="#">Contacto</a>
+    </nav>
+
+    <main>
+        <article>
+            <h2>Análisis Forense Digital: Descifrando las Huellas Ocultas</h2>
+            <p>
+                El análisis forense digital es el arte de reconstruir la verdad a partir de los restos 
+                digitales. Cada sector de un disco, cada paquete de red y cada bit en la memoria RAM 
+                puede convertirse en evidencia para revelar un crimen cibernético.
+            </p>
+            <blockquote>
+                “Los datos nunca mienten; solo esperan al analista adecuado.” – Aronymous Hack Lab
+            </blockquote>
+
+            <h2>Fases Clave del Proceso Forense</h2>
+            <ul>
+                <li><strong>Adquisición:</strong> Captura bit a bit para evitar alteraciones.</li>
+                <li><strong>Análisis:</strong> Exploración con software especializado.</li>
+                <li><strong>Recuperación:</strong> Restauración de archivos borrados.</li>
+                <li><strong>Correlación:</strong> Creación de líneas de tiempo de eventos.</li>
+                <li><strong>Informe:</strong> Presentación técnica y legalmente sólida.</li>
+            </ul>
+
+            <h2>Herramientas Esenciales</h2>
+            
+            <h3>🔹 Análisis de Discos</h3>
+            <ul>
+                <li><strong>Autopsy & Sleuth Kit:</strong> Forense open source para sistemas de archivos.</li>
+                <li><strong>EnCase:</strong> Estándar corporativo para investigaciones judiciales.</li>
+                <li><strong>X-Ways Forensics:</strong> Ligero y potente para análisis rápido.</li>
+            </ul>
+
+            <h3>🔹 Memoria RAM</h3>
+            <ul>
+                <li><strong>Volatility:</strong> Framework líder para investigación de RAM.</li>
+                <li><strong>Rekall:</strong> Alternativa rápida enfocada en incidentes modernos.</li>
+            </ul>
+
+            <h3>🔹 Tráfico de Red</h3>
+            <ul>
+                <li><strong>Wireshark:</strong> Análisis profundo de paquetes.</li>
+                <li><strong>Tshark:</strong> Versión de consola para automatización.</li>
+                <li><strong>NetworkMiner:</strong> Extracción de archivos y credenciales.</li>
+            </ul>
+
+            <h3>🔹 Metadatos y Artefactos</h3>
+            <ul>
+                <li><strong>ExifTool:</strong> Lectura avanzada de metadatos ocultos.</li>
+                <li><strong>Bulk Extractor:</strong> Búsqueda masiva de patrones y correos.</li>
+            </ul>
+
+            <h3>🔹 Cracking y Contraseñas</h3>
+            <ul>
+                <li><strong>Hashcat:</strong> Cracking GPU de alto rendimiento.</li>
+                <li><strong>John the Ripper:</strong> Herramienta clásica para hash comunes.</li>
+            </ul>
+
+            <h2>Retos Actuales</h2>
+            <p>
+                El forense moderno enfrenta desafíos como la nube, el cifrado de extremo a extremo 
+                y las técnicas anti-forenses. Pero con disciplina, metodología y herramientas adecuadas, 
+                la verdad digital siempre termina saliendo a la luz.
+            </p>
+        </article>
+
+        <aside>
+            <h3>Últimas Publicaciones</h3>
+            <ul>
+                <li><a href="#">Descifrando metadatos ocultos en PDFs</a></li>
+                <li><a href="#">Volatility 3: nueva generación de análisis RAM</a></li>
+                <li><a href="#">Rastreando ransomware en entornos corporativos</a></li>
+                <li><a href="#">Casos reales: el forense detrás de la justicia digital</a></li>
+            </ul>
+        </aside>
+    </main>
+
+    <footer>
+        <p>© 2025 Aronymous Hack Lab | Investigación Forense Digital y Ciberseguridad</p>
+    </footer>
+</body>
+</html>
