@@ -9,58 +9,126 @@
 
   </style>
 </head>
+<br><br>
 <body>
   <div class="blob">
-
-
-
   </div>
 
-
-<div class="header">
-  <h2>Blog Name</h2>
-</div>
-
-<div class="row">
-  <div class="leftcolumn">
-    <div class="card">
-      <h2>TITLE HEADING</h2>
-      <h5>Title description, Dec 7, 2017</h5>
-      <div class="fakeimg" style="height:200px;">Image</div>
-      <p>Some text..</p>
-      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-    </div>
-    <div class="card">
-      <h2>TITLE HEADING</h2>
-      <h5>Title description, Sep 2, 2017</h5>
-      <div class="fakeimg" style="height:200px;">Image</div>
-      <p>Some text..</p>
-      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-    </div>
+  <div class="header">
+    <h2>Aronymous Lab Hack</h2>
   </div>
-  <div class="rightcolumn">
-    <div class="card">
-      <h2>About Me</h2>
-      <div class="fakeimg" style="height:100px;">Image</div>
-      <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+
+  <div class="row">
+    <div class="leftcolumn">
+      <div class="card">
+        <h2>Auditoría Wi-Fi con Aircrack-ng</h2>
+        <h5>Guía técnica avanzada, Ago 12, 2025</h5>
+        <div class="fakeimg" style="height:100%;"><img src="../../imgs/hacker007.jpg" width="100%"  alt=""></div> <br>
+        <p>Aircrack-ng es una suite profesional de auditoría de redes Wi-Fi que permite evaluar la seguridad de redes inalámbricas bajo los estándares IEEE 802.11. Está pensada para expertos en ciberseguridad, administradores de red y entusiastas que desean probar la robustez de sus propias redes.</p>
+        <p>La suite se compone de varias herramientas clave:</p>
+        <ul>
+          <li><strong>airmon-ng</strong>: Habilita el modo monitor y gestiona procesos que interfieren con la captura de paquetes.</li>
+          <li><strong>airodump-ng</strong>: Captura tramas de gestión, control y datos, registrando BSSIDs, ESSIDs, clientes y canales activos.</li>
+          <li><strong>aireplay-ng</strong>: Permite inyectar tráfico en la red para generar handshakes o probar autenticaciones.</li>
+          <li><strong>aircrack-ng</strong>: Analiza capturas (.cap) y prueba contraseñas mediante ataques de diccionario o fuerza bruta.</li>
+        </ul>
+        <p>Es importante entender que Aircrack-ng no “hackea” redes de forma automática: requiere capturar un <em>handshake</em> WPA/WPA2, que es un intercambio criptográfico entre un cliente y un punto de acceso durante el proceso de autenticación.</p>
+      </div>
+      <div class="card">
+        <h2>Ejemplo seguro de uso</h2>
+        <h5>Auditoría paso a paso</h5>
+        <div class="fakeimg" style="height:100%;"><img src="../../imgs/hacker007.jpg" width="100%"  alt=""></div> <br>
+        <p>A continuación, un ejemplo práctico para auditar tu red doméstica. <strong>Usar únicamente en redes propias o con autorización explícita.</strong></p>
+        <p>
+# 1. Colocar la interfaz en modo monitor
+sudo airmon-ng check kill
+sudo airmon-ng start wlan0
+
+# 2. Capturar tráfico y localizar tu red
+sudo airodump-ng wlan0mon
+
+# 3. Iniciar captura filtrada en tu red
+sudo airodump-ng --bssid AA:BB:CC:DD:EE:FF --channel 6 \
+--write captura wlan0mon
+
+# 4. (Opcional) Forzar reautenticación para obtener el handshake
+sudo aireplay-ng --deauth 10 -a AA:BB:CC:DD:EE:FF wlan0mon
+
+# 5. Probar contraseñas con un diccionario
+aircrack-ng captura-01.cap -w diccionario.txt
+
+# 6. Restaurar la interfaz a modo normal
+sudo airmon-ng stop wlan0mon
+sudo service NetworkManager restart
+        </p>
+        <p><strong>Explicación técnica:</strong> El handshake WPA2 es un intercambio de cuatro mensajes EAPOL donde el cliente y el AP negocian la clave de sesión. Aircrack-ng utiliza el handshake capturado y genera PMKs (Pairwise Master Keys) a partir de contraseñas del diccionario, comparándolas con el hash derivado del handshake.</p>
+      </div>
+      <div class="card">
+        <h2>Buenas prácticas y defensa</h2>
+        <h5>Endureciendo tu red contra ataques</h5>
+        <div class="fakeimg" style="height:200px;">Esquema de seguridad</div>
+        <p>Para protegerte de ataques realizados con herramientas como Aircrack-ng, sigue estas recomendaciones:</p>
+        <ul>
+          <li>Utiliza WPA3 con SAE siempre que sea posible.</li>
+          <li>Configura contraseñas largas (mínimo 16 caracteres) y aleatorias.</li>
+          <li>Desactiva WPS (Wi-Fi Protected Setup), ya que es vulnerable a ataques offline.</li>
+          <li>Actualiza el firmware de tu router para corregir vulnerabilidades conocidas.</li>
+          <li>Habilita filtrado por MAC solo como medida complementaria, no como única defensa.</li>
+        </ul>
+        <p><em>Recuerda:</em> la seguridad de la red depende tanto de la robustez de la contraseña como de la configuración general del punto de acceso.</p>
+      </div> <br><br>
     </div>
-    <div class="card">
-      <h3>Popular Post</h3>
-      <div class="fakeimg">Image</div><br>
-      <div class="fakeimg">Image</div><br>
-      <div class="fakeimg">Image</div>
-    </div>
-    <div class="card">
-      <h3>Follow Me</h3>
-      <p>Some text..</p>
-    </div>
+    <div class="rightcolumn">
+      <div class="card">
+        <h2>Sobre mí</h2>
+        <div class="fakeimg" style="height:100%;"><img src="../../imgs/queirocreer.jpg" width="100%"  alt=""></div> <br>
+        <p>Especialista en ciberseguridad y redes inalámbricas, dedicado a la investigación y divulgación técnica sobre seguridad informática.</p>
+      </div>
+<div class="card">
+  <h3>Publicaciones populares</h3>
+  <div class="fakeimg">Seguridad WPA3: Guía completa para configurar y proteger tu red con el estándar más reciente.</div><br>
+  <div class="fakeimg">Top 5 diccionarios para auditorías: Análisis comparativo y descarga de las mejores wordlists.</div><br>
+  <div class="fakeimg">Optimizar tu router doméstico: Mejores prácticas para velocidad y seguridad.</div>
+</div>
+
+<div class="card">
+  <h3>Sígueme</h3>
+  <p>Conéctate conmigo y accede a más contenido técnico y guías prácticas:</p>
+  <ul>
+    <li><a href="#">GitHub</a> - Proyectos y código fuente.</li>
+    <li><a href="#">Twitter</a> - Noticias y tips rápidos.</li>
+    <li><a href="#">YouTube</a> - Tutoriales paso a paso.</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3>Apoya el proyecto</h3>
+  <p>Si te gusta mi trabajo y quieres apoyar el desarrollo de más guías y herramientas, considera hacer una donación:</p>
+  <div class="fakeimg" style="height:100%;">
+    <img src="https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-100px.png" alt="Donar con PayPal" style="height:40px;">
+  </div><br>
+  <div class="fakeimg" style="height:100%;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg" alt="Donar con Bitcoin" style="height:40px;">
+    <p>BTC Wallet: <code>:</code></p>
+  </div><br>
+  <div class="fakeimg" style="height:100%;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/01/Ethereum_logo_translucent.svg" alt="Donar con Ethereum" style="height:40px;">
+    <p>ETH Wallet: <code>:</code></p>
   </div>
 </div>
 
-<div class="footer">
-  <h2>Footer</h2>
-</div>
 
+  <div class="footer">
+          <div class="fakeimg" style="height:100%;"><img src="../../imgs/aaron.jpg" width="100%"  alt=""></div> <br>
+          <br><br>
+          <p>Mi aplicación es gratuita y de código abierto
+Esta aplicación web fue diseñada y desarrollada completamente por mí, su único creador. 
+He decidido publicarla de forma gratuita para que cualquier persona pueda usarla sin costo alguno. <br><br>
+Además, el proyecto es open source, lo que significa que el código está disponible para que otros puedan revisarlo, 
+aprender de él y, si lo desean, contribuir con mejoras. <br><br>
+Mi objetivo es que esta herramienta llegue a la mayor cantidad de personas posible y que sirva como aporte a la comunidad, manteniendo siempre el espíritu de compartir conocimiento libremente.</p>
 
+  </div> <br><br>
 </body>
+
 </html>

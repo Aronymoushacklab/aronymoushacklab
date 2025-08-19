@@ -13,7 +13,7 @@ body {
   color: #00ff00;
   overflow-x: hidden;
 
-  width: 70%;
+  width: 80%;
   margin: 0 auto;  /* Centra horizontalmente */
 }
 
@@ -29,12 +29,12 @@ body {
 /* Columns */
 .leftcolumn {   
   float: left;
-  width: 75%;
+  width: 65%;
 }
 
 .rightcolumn {
   float: left;
-  width: 25%;
+  width: 35%;
   padding-left: 20px;
 }
 
@@ -44,6 +44,9 @@ body {
   width: 100%;
   padding: 20px;
   color: #0f0;
+/*  background-image: url(../../imgs/elite1.gif);
+  background-size: cover;
+  background-position: center; */
 }
 
 /* Card styling */
@@ -64,7 +67,7 @@ body {
 /* Footer */
 .footer {
   padding: 20px;
-  text-align: center;
+  text-align: left;
   background: #111;
   color: #0f0;
   margin-top: 20px;
@@ -107,3 +110,4 @@ body {
     border-radius: 50% 40% 60% 50% / 50% 60% 40% 50%;
   }
 }
+
